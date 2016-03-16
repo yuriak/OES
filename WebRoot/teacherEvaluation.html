@@ -1,0 +1,263 @@
+﻿<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<META HTTP-EQUIV="expires" CONTENT="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="教师评价项目，教师新建评价项">
+    <meta name="keywords" content="教师 评价项 新建">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>教师评价项页面</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+<body>
+<!-- Begin "返回"公共头部 -->
+<header data-am-widget="header" class="my-header my-text-center am-header am-header-default">
+    <div class="am-header-left am-header-nav" style="left: 0;">
+        <a id="back" class="header-back">
+            <img class="am-header-icon-custom"
+                 src="data:image/svg+xml;charset=utf-8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 12 20&quot;&gt;&lt;path d=&quot;M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z&quot; fill=&quot;%23fff&quot;/&gt;&lt;/svg&gt;"
+                 alt=""/>
+        </a>
+    </div>
+
+    <span id="" class="my-text-white my-center">评价项列表</span>
+    <!-- 按钮触发器， 需要指定 target -->
+    <a href="#personalCenter" class="my-personal-icon my-white am-icon-btn am-icon-user"
+       data-am-offcanvas="{target: '#personalCenter',effect: 'push'}">
+    </a>
+    <!-- Begin个人中心 -->
+    <div id="personalCenter" class="am-offcanvas">
+        <div class="my-offcanvas am-offcanvas-bar am-offcanvas-bar-flip">
+            <div class="am-offcanvas-content">
+                <div class="my-person-text">个人中心</div>
+                <span class="my-photo am-icon-optin-monster am-icon-lg"></span>
+
+                <div id="realName" class="realName">李红</div>
+                <div class="am-btn-group-stacked">
+                                       <button id="right-to-home" type="button" class="my-person-menu-top my-person-menu am-btn am-btn-default am-icon-home"><span>首页</span>
+                    </button>
+                    <button type="button"
+                            class="my-person-menu-top my-person-menu am-btn am-btn-default am-icon-comments-o">
+                        <span>消息</span></button>
+                    <button type="button" class="my-person-menu am-btn am-btn-default am-icon-cog"><span>个人设置</span>
+                    </button>
+                    <button id="my-set-pwd" type="button" class="my-person-menu am-btn am-btn-default am-icon-lock"><span>更改密码</span>
+                    </button>
+                    <button type="button" class="my-exit my-person-menu am-btn am-btn-default">退出登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End个人中心 -->
+</header>
+<!-- End "返回"公共头部 -->
+
+<!-- Begin 添加按钮-->
+<button type="button" class="my-add-button am-btn am-btn-secondary am-icon-plus" id="doc-prompt-toggle"></button>
+<!-- End 添加按钮-->
+
+
+
+<!-- Begin 评价项-->
+<section data-am-widget="accordion" class="my-section-evaluation am-accordion am-accordion-gapped" data-am-accordion='{  }'>
+    <dl class="my-teacher-course am-accordion-item"></dl>
+</section>
+<!-- End 评价项-->
+
+
+
+<!--begin template -->
+<div class="template-evaluation" hidden>
+    <dl class="my-teacher-course am-accordion-item ">
+        <code style="position: absolute;display: block;z-index: 100;right: 50px;top: 9px;" class="evaluation-tatus">
+            <span></span>
+        </code>
+        <button type="button" class="my-accordion-button" value=""></button>
+        <dt class="my-accordion-title am-accordion-title" value="1"></dt>
+        <dd class="am-accordion-bd am-collapse">
+            <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+            <div class="my-time am-accordion-content">
+                <!-- 评价开始与结束-->
+                <div class="am-g am-g-collapse ">
+                    <div class="am-u-sm-6 ">
+                        <input value="" hidden class="my-status-evaluation">
+                        <button  value="" type="button" class=" evaluation-star my-center am-btn am-btn-secondary  " >开始评价</button>
+                    </div>
+                    <div class="am-u-sm-6 ">
+                        <button value="" type="button" class=" evaluation-stop my-center am-btn am-btn-danger  am-icon-clock-o "  >停止评价</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 删除评价与查看分组 -->
+            <div class="am-accordion-content">
+                <div class="am-g am-g-collapse ">
+                    <div class="am-u-sm-6 ">
+                        <button value="" type="button" class=" check-group my-center am-btn am-btn-secondary  "  disabled >查看分组</button>
+                    </div>
+                    <div class="am-u-sm-6 ">
+                        <!-- 删除课节-->
+                        <button  value="" type="button" class=" delete-evaluation my-center am-btn am-btn-danger am-icon-trash-o "  >删除项目</button>
+                    </div>
+                </div>
+            </div>
+        </dd>
+    </dl>
+</div>
+<!--End template -->
+
+
+
+
+
+<!--begin 查看分组 -->
+<div class="am-popup" id="my-popup">
+    <div class="am-popup-inner">
+        <div class="am-popup-hd">
+             <h4 class="am-popup-title">分组信息</h4>
+             <span data-am-modal-close class="am-close">X</span>
+        </div>
+        <div class="am-popup-bd">
+            <section data-am-widget="accordion" class="my-section-group am-accordion am-accordion-basic" data-am-accordion='{  }'>
+
+            </section>
+            <div class="am-modal-footer">
+                <button  type="button" class=" my-center my-add-group am-btn  am-btn-success">保存为组模板</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End 查看分组 -->
+
+
+<div class="template-group" hidden>
+    <dl class="am-accordion-item">
+        <dt class="my-accordion-title am-accordion-title" value="1">
+        </dt>
+        <dd class="am-accordion-bd am-collapse">
+            <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+            <div class="am-accordion-content">
+                <ul class="my-ul">
+
+                </ul>
+            </div>
+        </dd>
+    </dl>
+</div>
+
+
+
+<!-- begin 组模板保存-->
+<div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt" closeViaDimmer="false">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">=-请输入组模板名称-=</div>
+        <div class="am-modal-bd">
+            <input id="doc-vld-age-3" type="text" class="am-modal-prompt-input"   value="" required>
+        </div>
+        <div class="am-modal-footer">
+            <span id="deleteMsg" class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn " data-am-modal-confirm>保存</span>
+        </div>
+    </div>
+</div>
+<!-- End 组模板保存-->
+
+
+<!-- Begin 删除提示Dialog-->
+<div class="my-delete-dialog am-modal am-modal-confirm" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">注意：</div>
+        <div class="am-modal-bd">
+            你，确定要删除吗？
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+        </div>
+    </div>
+</div>
+<!-- End 提示Dialog-->
+
+
+
+<!-- Begin 停止评价提示Dialog-->
+<div class="my-stop-dialog am-modal am-modal-confirm" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">注意：</div>
+        <div class="am-modal-bd">
+            你，确定要停止该评价项目吗？
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+        </div>
+    </div>
+</div>
+<!-- End 停止评价提示Dialog-->
+
+
+<!-- Begin success提示框 -->
+<div id="my-alert-success" class="am-modal am-modal-alert" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">成功</div>
+        <div class="am-modal-bd">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<!-- End success提示框-->
+<!-- Begin err提示框 -->
+<div id="my-alert-false" class="am-modal am-modal-alert" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">抱歉</div>
+        <div class="am-modal-bd">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<!-- End err提示框-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/js.cookie.js"></script>
+<script src="assets/js/teacherEvaluation.js"></script>
+
+</body>
+</html>

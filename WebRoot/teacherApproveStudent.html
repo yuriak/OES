@@ -1,0 +1,175 @@
+﻿<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<META HTTP-EQUIV="expires" CONTENT="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="批准学生上课">
+    <meta name="keywords" content="教师 批准 上课">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>批准学生</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+<body>
+<!-- Begin "返回"公共头部 -->
+<header data-am-widget="header" class="my-header my-text-center am-header am-header-default">
+    <div class="am-header-left am-header-nav" style="left: 0;">
+        <a id="back" class="header-back">
+            <img class="am-header-icon-custom"
+                 src="data:image/svg+xml;charset=utf-8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 12 20&quot;&gt;&lt;path d=&quot;M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z&quot; fill=&quot;%23fff&quot;/&gt;&lt;/svg&gt;"
+                 alt=""/>
+        </a>
+        <span id="register-text">批准学生</span>
+    </div>
+    <!-- 按钮触发器， 需要指定 target -->
+    <a href="#personalCenter" class="my-personal-icon my-white am-icon-btn am-icon-user"
+       data-am-offcanvas="{target: '#personalCenter',effect: 'push'}">
+    </a>
+    <!-- Begin个人中心 -->
+    <div id="personalCenter" class="am-offcanvas">
+        <div class="my-offcanvas am-offcanvas-bar am-offcanvas-bar-flip">
+            <div class="am-offcanvas-content">
+                <div class="my-person-text">个人中心</div>
+                <span class="my-photo am-icon-optin-monster am-icon-lg"></span>
+
+                <div id="realName" class="realName">李红</div>
+                <div class="am-btn-group-stacked">
+                                        <button id="right-to-home" type="button" class="my-person-menu-top my-person-menu am-btn am-btn-default am-icon-home"><span>首页</span>
+                    </button>
+                    <button type="button"
+                            class="my-person-menu-top my-person-menu am-btn am-btn-default am-icon-comments-o">
+                        <span>消息</span></button>
+                    <button type="button" class="my-person-menu am-btn am-btn-default am-icon-cog"><span>个人设置</span>
+                    </button>
+                    <button id="my-set-pwd" type="button" class="my-person-menu am-btn am-btn-default am-icon-lock"><span>更改密码</span>
+                    </button>
+                    <button type="button" class="my-exit my-person-menu am-btn am-btn-default">退出登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End个人中心 -->
+</header>
+<!-- End "返回"公共头部 -->
+
+<section data-am-widget="accordion" class="my-students am-accordion am-accordion-gapped" data-am-accordion='{  }'>
+
+</section>
+
+
+<div class="template-student" hidden>
+        <dl class="my-teacher-course am-accordion-item">
+            <dt class="my-accordion-title am-accordion-title" value="1">
+                <label class="approve-student am-checkbox am-secondary">
+                    <span class="studentName"></span>
+                    <input type="checkbox" checked="checked" class="studentInput" value="" data-am-ucheck>
+                </label>
+            </dt>
+            <dd class="am-accordion-bd am-collapse ">
+                <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                <div class="am-accordion-content">
+                    <ul class="am-list am-list-static am-list-border am-list-striped">
+                        <li ><span>学号: </span><span class="my-userName"></span></li>
+                        <li ><span>专业: </span><span class="my-major"></span></li>
+                        <li ><span>学院: </span><span class="my-college"></span></li>
+                    </ul>
+                </div>
+            </dd>
+        </dl>
+</div>
+
+
+
+
+<!-- 底部菜单-->
+<div class="am-navbar am-cf am-navbar-default "
+     id="">
+    <ul class="am-navbar-nav am-cf am-avg-sm-4">
+        <li >
+            <a id="rejectButton" class="">
+                <span class="am-icon-close"></span>
+                <span class="am-navbar-label">拒绝</span>
+            </a>
+        </li>
+        <li>
+            <a id="approveButton" class="">
+                <span class="am-icon-angellist"></span>
+                <span class="am-navbar-label">批准</span>
+            </a>
+        </li>
+        <li>
+            <a class="">
+                <label class="all-check am-checkbox am-danger">
+                    <input type="checkbox" class="all" value="1" checked="checked"  data-am-ucheck>
+                    <span class="all-text">取消全选</span>
+                </label>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<!-- Begin success提示框 -->
+<div id="my-alert-success" class="am-modal am-modal-alert" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">成功</div>
+        <div class="am-modal-bd">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<!-- End success提示框-->
+<!-- Begin err提示框 -->
+<div id="my-alert-false" class="am-modal am-modal-alert" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">抱歉</div>
+        <div class="am-modal-bd">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<!-- End err提示框-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/js.cookie.js"></script>
+<script src="assets/js/teacherApproveStudent.js"></script>
+</body>
+</html>

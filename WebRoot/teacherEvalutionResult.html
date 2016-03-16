@@ -1,0 +1,164 @@
+﻿<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<META HTTP-EQUIV="expires" CONTENT="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="教师查看评价结果">
+    <meta name="keywords" content="教师 评价 结果 学生">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>评价结果</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<!-- Begin "返回"公共头部 -->
+<header data-am-widget="header" class="my-header my-text-center am-header am-header-default">
+    <div class="am-header-left am-header-nav" style="left: 0;">
+        <a id="back" class="header-back" href="javascript:window.history.go(-1);">
+            <img class="am-header-icon-custom"
+                 src="data:image/svg+xml;charset=utf-8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 12 20&quot;&gt;&lt;path d=&quot;M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z&quot; fill=&quot;%23fff&quot;/&gt;&lt;/svg&gt;"
+                 alt=""/>
+        </a>
+        <span id="register-text">评价结果</span>
+    </div>
+
+</header>
+
+<!-- End "返回"公共头部 -->
+<button type="button" class="student-select my-center my-blue am-btn am-icon-caret-down">学生</button>
+<!--Begin 还没有评价此人的学生名单-->
+<p>
+    <span class="my-center my-text-center">
+        还没有评价此人的学生有：
+    </span>
+    <span class="my-center my-text-center">
+         <code>张三</code>
+         <code>李四</code>
+         <code>王五</code>
+         <code>张三</code>
+         <code>李四</code>
+         <code>王五</code>
+         <code>张三</code>
+         <code>李四</code>
+         <code>王五</code>
+    </span>
+</p>
+<!--End 还没有评价此人的学生名单-->
+
+
+<div class="mark-bar">
+    <span id="min1" class="min">0</span>
+    <span id="max1" class="max">100</span>
+    <code id="title1" class="mark-grade" value="0">0</code>
+    <a id="btn1" type="button" class="slider"></a>
+    <div id="line1" class="mark-bar-line"></div>
+    <div id="progress1" class="mark-bar-progress"></div>
+</div>
+
+<div class="mark-bar">
+    <span id="min2" class="min">0</span>
+    <span id="max2" class="max">100</span>
+    <code id="title2" class="mark-grade" value="0">0</code>
+    <a id="btn2" type="button" class="slider"></a>
+    <div id="line2" class="mark-bar-line"></div>
+    <div id="progress2" class="mark-bar-progress"></div>
+</div>
+
+
+<!-- Begin 学生列表的 Dialog-->
+<div class="my-student-dialog">
+    <div id="mask"></div>
+    <ul class="am-list am-list-static am-list-border">
+        <li class="my-text-center">
+            <a href="#" class=" my-mark-student">小明
+            </a>
+        </li>
+        <li class="my-text-center">
+            <a href="#" class=" my-mark-student">小明
+            </a>
+        </li>
+        <li class="my-text-center">
+            <a href="#" class=" my-mark-student">小明
+            </a>
+        </li>
+        <li class="my-text-center">
+            <a href="#" class=" my-mark-student">小明
+            </a>
+        </li>
+        <li class="my-text-center">
+            <a href="#" class=" my-mark-student">小明
+            </a>
+        </li>
+
+    </ul>
+</div>
+<!-- End 学生列表的 Dialog-->
+
+
+<!-- Begin success提示框 -->
+<div id="my-alert-success" class="am-modal am-modal-alert" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">成功</div>
+        <div class="am-modal-bd">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<!-- End success提示框-->
+<!-- Begin err提示框 -->
+<div id="my-alert-false" class="am-modal am-modal-alert" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">抱歉</div>
+        <div class="am-modal-bd">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<!-- End err提示框-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/js.cookie.js"></script>
+<!--<script src="assets/js/echarts.common.min.js"></script>-->
+
+<script src="assets/js/teacherEvaluationResult.js"></script>
+
+</body>
+</html>

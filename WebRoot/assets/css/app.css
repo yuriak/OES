@@ -1,0 +1,724 @@
+/* Write your styles */
+.my-underline-input input[type], fieldset .my-select {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+div[id|=template]{
+    display: none;
+}
+code[data-elective-status]{
+    display: block;
+    text-align: center;
+}
+h6.field-title{
+    margin-bottom: 6px;
+}
+.two-button{
+    display: none;
+    margin-top: 35px;
+}
+button.student-field-submit{
+    width: 55%;
+}
+.field-panel{
+    margin: 3px;
+}
+hr.my-field-hr{
+    margin-top: 30px;
+    margin-bottom: 2px;
+}
+.group-select{
+    display: flex;
+    margin-bottom:10px ;
+}
+/*滑动评价打分*/
+.min {
+    position: absolute;
+    top: 0;
+}
+
+.max {
+    position: absolute;
+    top: 0;
+}
+
+.mark-bar {
+    position: relative;
+    display: block;
+    padding: 10px;
+    height: 30px;
+
+}
+
+.mark-bar-line {
+    display: block;
+    border-radius: 10px/10px;
+    height: 10px;
+    width: 60%;
+    margin: 0 auto;
+    background-color: #1BB8FA;
+}
+
+.mark-bar-progress {
+    position: absolute;
+    left: 20%;
+    display: block;
+    border-radius: 10px/10px;
+    height: 10px;
+    margin: -10px auto -10px;
+    background-color: #FF0052;
+}
+
+.slider {
+    position: absolute;
+    display: block;
+    z-index: 1;
+    top: 5px;
+    left: 20%;
+
+
+    height: 20px;
+    width: 20px;
+    padding: 0;
+
+    border-radius: 50%;
+    background-color: #D0D0D0;
+}
+
+.mark-grade {
+    position: absolute;
+    left: 10px;
+    top: -2px;
+    text-align: center;
+    font-size: 1em;
+}
+.choose-sfs{
+    display: inline-block;
+    margin: 0 0 0 10px;
+}
+#group-template-show{
+    top: 80px;
+    z-index: 200;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 90px;
+    width: 100%;
+    min-height: 450px;
+    background-color: white;
+}
+.unique-connection{
+    position: absolute;
+    position: absolute;
+    display: none;
+}
+#button-tem-sfs{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+    text-align: center;
+}
+#mask2-sfs {
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+/*background-color*/
+.my-primary {
+    background-color: #3bb4f2;
+}
+
+.my-warning {
+    background-color: #F37B1D;
+}
+
+.my-red {
+    background: rgba(255, 0, 0, 0.6);
+}
+
+.my-blue {
+    background-color: #1bb8fa;
+}
+
+.my-green {
+    background: rgba(137, 247, 102, 0.63);
+}
+
+.my-white {
+    color: #fff;
+}
+
+/*text-color*/
+.my-text-white {
+    color: #fff;
+}
+
+/*teacherIndex.html*/
+.am-accordion-gapped .my-teacher-course {
+    border: 1px solid #dedede;
+}
+
+/*teacherApproveStudent.html*/
+
+.my-students label.am-checkbox {
+    float: left;
+    width: 25%;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+label.approve-student + .am-checkbox {
+    margin-top: 10px;
+}
+
+.my-footer {
+    position: fixed;
+    bottom: 0;
+}
+
+label.all-check {
+    width: 100%;
+    padding-top: 6px;
+    margin-left: 3px;
+    padding-left: 0px;
+}
+
+/*teacherAddEvaluation.html*/
+
+
+.my-evaluation-form {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+label.my-divide {
+    display: block;
+    width: 50%;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.my-divide span {
+    margin-left: 100%;
+}
+
+.my-evaluation-form .am-form-group {
+    width: 100%;
+}
+
+.my-evaluation-form .top {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.my-evaluation-form .am-panel .left {
+    float: right;
+}
+
+#divide {
+    display: none;
+}
+
+.add-button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.field-top {
+    margin-top: 7px;
+}
+
+.evaluation-form-group {
+    margin: 0;
+}
+
+.field-add {
+    float: left;
+    margin-top: 4px;
+}
+
+.field-delete, .check-delete, .check-add, .field-add {
+    float: left;
+    margin-left: 5px;
+    margin-top: 4px;
+}
+
+label.my-cun-new {
+    margin-top: 20px;
+    margin-left: 20%;
+    width: 50%;
+}
+
+.my-input-field {
+    float: left;
+    margin-left: 5px;
+
+}
+
+.field-group {
+    display: block;
+    height: 41px;
+    line-height: 41px;
+}
+
+.am-form input.field {
+    float: left;
+    margin-left: 5px;
+    width: 54%;
+
+}
+
+.aCheck {
+    width: 85%;
+}
+
+.am-form .type {
+    float: left;
+    margin-left: 10px;
+    width: 25%;
+}
+
+.content-group {
+    height: 40px;
+    margin-left: 35px;
+}
+
+.clear::after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+.number-left {
+    float: left;
+
+}
+
+.template-name {
+    display: none;
+}
+
+.template-name::before {
+    content: "";
+    display: block;
+    clear: both;
+
+}
+
+.addEvaluation {
+    display: block;
+    margin: 30px auto 60px;
+    width: 50%;
+}
+
+/*teacherMarkGrade.html*/
+button.student-select {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+button.am-icon-caret-down:before {
+    content: "";
+}
+
+button.am-icon-caret-down:after {
+    content: "\f0d7";
+}
+
+.my-student-dialog {
+    position: absolute;
+    display: none;
+    width: 80%;
+    right: 10%;
+}
+
+.am-list-border > li >a.my-mark-student {
+    padding: 0;
+    height:2rem;
+}
+.student-aa{
+	    display: block;
+    padding: 5px 80px 5px 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    border-bottom: solid 1px #DEDEDE;
+}
+.my-marked {
+    float: right;
+    margin-top: 5px;
+}
+
+.my-panel-margin {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+/* "���?" ��ť*/
+.my-add-button {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    padding: 1px;
+    border-radius: 50%;
+    margin: 30px auto 0;
+    border: 0;
+}
+
+.my-add-button:active:focus, .my-add-button:focus {
+    outline: none;
+}
+
+.my-add-button:before {
+    font-size: 5rem;
+    line-height: 5.2rem;
+}
+
+/*Begin course�۵�*/
+.my-teacher-course,.my-evaluation{
+    position: relative;
+}
+
+.am-accordion-gapped .my-accordion-title {
+    padding: 0;
+    height: 46px;
+}
+
+.am-accordion-gapped .my-accordion-title::after {
+    content: "\f013";
+
+    margin-top: -5px;
+    margin-right: 3px;
+    padding-right: 5px;
+    padding-right: 5px;
+}
+.grade-ul li{
+    padding-left: 30px;
+}
+.grade-ul li.max-value{
+    color: #5eb95e;
+}
+.grade-ul li.min-value{
+    color: #c1423a;
+}
+.grade-ul li.average-value{
+    color: #105ba3;
+}
+.grade-ul li.total-number{
+    color: #949494;
+}
+
+.my-accordion-button {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    height: 45px;
+    margin-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: none;
+    background-color: #1bb8fa;
+    z-index: 20;
+    text-align: left;
+}
+.single-histogram,.single-pie,.multiple-histogram{
+    width: 90%;
+    margin-left: 0px;
+    height:300px;
+}
+h6.my-course-h6-last {
+    display: inline-block;
+    margin: 6px 6px 6px 0px;
+}
+
+h6.my-course-h6-first {
+    display: inline-block;
+    margin: 6px 6px 6px 0px;
+}
+.field-sfs{
+    padding-bottom: 1px;
+    display: block;
+    font-size: 1.8rem;
+}
+.field-sfs>span:first-child{
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+.field-sfs>span.more-sfs{
+    font-size: 1rem;
+    line-height: 2.5rem;
+}
+/* .result-text-sfs{
+    display: block;
+    padding: 5px 80px 5px 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    border-bottom: solid 1px #DEDEDE;
+} */
+.text-top{
+    border-top: solid 1px #DEDEDE;
+    font-size: 1.4rem;
+}
+.course-time-sfs{
+    font-size: 1rem;
+    padding-left: 15px;
+    color: #F9F9F9;
+}
+.course-right {
+    float: right;
+    width: 50%;
+    text-align: left;
+}
+
+.my-delete-button {
+    display: block;
+    margin: 5px auto 0 auto;
+    padding: 5px 10px;
+    border-radius: 8%;
+    background-color: rgba(255, 0, 0, 1);
+    color: white;
+}
+
+.my-delete-button:before {
+    font-size: 2rem;
+    padding-right: 5px;
+}
+
+.no-active .am-collapse {
+    display: none;
+    height: 0;
+}
+
+/*End course�۵�*/
+/*semester*/
+.semester {
+    display: block;
+    margin: 10px auto 10px;
+}
+
+/*��ǩ*/
+.my-center {
+    display: block;
+    margin: 0 auto;
+}
+
+/*text*/
+.my-text-center {
+    text-align: center;
+}
+
+.my-next {
+    width: 45%;
+}
+
+.my-radio-group-center {
+    text-align: center;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.my-alert {
+    margin: -16px 0 10px 0;
+    padding: .25em .625em;
+    font-size: 1.3rem;
+}
+
+#mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.my-top-gap {
+    margin-top: 8px;
+}
+
+/*ͷ��*/
+.header-back {
+    width: 49px;
+}
+
+.header-back:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.my-header {
+    padding-left: 0;
+    background-color: #1bb8fa;
+}
+
+.my-personal-icon {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.my-personal-icon:before {
+    top: 7px;
+    left: 0;
+    right: 0;
+    display: block;
+    position: absolute;
+    color: #5FB0D2;
+
+}
+
+.my-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    line-height: 55px;
+    color: #6F7E94;
+    background-color: #fff;
+}
+
+.my-offcanvas {
+    background-color: #0B5473;
+}
+
+.my-person-text {
+    color: white;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    /*border-bottom: 1px solid rgba(255, 255, 255, 0.2);*/
+}
+
+.realName {
+    margin-top: -12px;
+    margin-bottom: 20px;
+}
+
+.am-btn-group-stacked > .my-person-menu-top.am-btn {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.am-btn-group-stacked > .my-person-menu.am-btn {
+    /*position: absolute;*/
+    /*left: 30px;*/
+    text-align: left;
+}
+
+.am-btn-group-stacked > .my-person-menu > span {
+    padding-left: 15px;
+}
+
+.am-btn-group-stacked > .my-person-menu-top > span {
+    letter-spacing: 2em;
+}
+
+.am-btn-group-stacked > .my-person-menu {
+    float: left;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(255, 255, 255, 0.8);
+
+}
+
+.am-btn-group-stacked > .my-exit.am-btn {
+    border: none;
+    margin-top: 50px;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+/*login.html*/
+#indexLogo {
+    position: absolute;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+#loginPanel {
+    position: absolute;
+    z-index: 2;
+    width: 250px;
+    height: 250px;
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+#loginIn {
+    width: 100%;
+}
+
+.forget {
+    font-size: 1rem;
+}
+
+/*login.html��register.html����*/
+#user, #password, #userName, #againPassword {
+    display: block;
+    border-left-width: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+}
+
+.am-form .my-form-group {
+    margin-bottom: 15px;
+}
+
+/*register.html*/
+#my-register {
+    position: absolute;
+    z-index: 2;
+}
+
+.protect {
+    position: relative;
+    background-color: #1bb8fa;
+}
+
+#select-question {
+    opacity: 0;
+}
+
+#select-question:hover {
+    cursor: pointer;
+}
+
+#input-question {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 68px;
+}
+
+.input-question-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 69px;
+    height: 39px;
+}
+
+.my-select-down {
+    position: absolute;
+    top: 0;
+    right: 12px;
+}
+
+.my-submit {
+    width: 45%;
+    margin-top: 18px;
+}
+
+.re-sfs{
+	width: 50px;
+}

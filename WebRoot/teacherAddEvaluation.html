@@ -1,0 +1,210 @@
+﻿<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<META HTTP-EQUIV="expires" CONTENT="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="教师添加评价项">
+    <meta name="keywords" content="教师 添加 评价项">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>教师添加评价项</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<!-- Begin "返回"公共头部 -->
+<header data-am-widget="header" class="my-header my-text-center am-header am-header-default">
+    <div class="am-header-left am-header-nav" style="left: 0;">
+        <a id="back" class="header-back" href="#">
+            <img class="am-header-icon-custom"
+                 src="data:image/svg+xml;charset=utf-8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 12 20&quot;&gt;&lt;path d=&quot;M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z&quot; fill=&quot;%23fff&quot;/&gt;&lt;/svg&gt;"
+                 alt=""/>
+        </a>
+        <span id="register-text">添加评价项</span>
+    </div>
+</header>
+<!-- End "返回"公共头部 -->
+<form class="my-evaluation-form am-form am-form-inline" data-am-validator>
+    <div class="top am-form-group">
+        <label for="field-title">标题：</label>
+        <input type="text" id="field-title" minlength="1" maxlength="20" placeholder="请输入标题"/>
+    </div>
+    <label class="my-divide am-checkbox am-secondary">
+        是否分组
+        <input id="isDivide" type="checkbox" value="0" data-am-ucheck>
+    </label>
+    <!-- Begin 分组-->
+    <div id="divide" class="am-panel am-panel-default">
+        <div class="am-panel-bd">
+            <button type="button" id='import-group-template' class="am-btn am-btn-danger">组模板导入</button>
+            <button type="button" id="new-group" class="left am-btn am-btn-danger">新建分组</button>
+            <div class="top am-form-group" hidden>
+                <label for="total-group-number">总组数：</label>
+                <input type="number" id="total-group-number" value="0" minlength="1" placeholder="请输入总组数" useTemplate="false"/>
+            </div>
+        </div>
+    </div>
+    <!-- End 分组-->
+    <label>评价标准：</label>
+    <select id="field-template">
+        <option value="0">新建</option>
+    </select>
+
+
+    <!-- Begin 添加评价项2-->
+    <div class="clear field-top">
+        <!-- Begin 评价字段-->
+        <div class="field-group">
+            <span class="number-left">1.</span>
+            <input type="text" class="field" minlength="1" placeholder="请输入内容" required/>
+            <select class="type clear">
+                <option value="0" selected>打分</option>
+                <option value="1">单选</option>
+                <option value="2">多选</option>
+                <option value="3">文字</option>
+            </select>
+            <button type="button" class="field-add add-button my-text-white am-btn am-btn-secondary">+</button>
+        </div>
+        <hr data-am-widget="divider" style="" class="am-divider am-divider-dashed"/>
+        <!-- End 评价字段-->
+    </div>
+    <!-- End 添加评价项2-->
+    <!--End 单选/多选-->
+
+    <label class="my-cun-new am-checkbox am-secondary">
+        <input id="saveTemplate" type="checkbox" value="1" data-am-ucheck> 是否存为新模板？
+    </label>
+
+    <div class="template-name">
+        模板名:<input type="text" minlength="1" placeholder="请填写模板名称"></div>
+    </div>
+
+    <button type="button" class="addEvaluation am-btn am-btn-danger" data-group-template-id="">提交</button>
+
+
+</form>
+
+
+<section id="group-template-show" data-am-widget="accordion" class="unique-connection am-accordion am-accordion-basic"
+         data-am-accordion='{  }'>
+    <!-- 组模板显示区域-->
+	<div id="gtemplate">
+	</div>
+    <div id="button-tem-sfs">
+        <button id='confirm-sfs' type="button" class="am-btn am-btn-danger" data-group-template-id="">确认</button>
+        <button id='cancel-sfs' type="button" class="am-btn am-btn-secondary" >取消</button>
+    </div>
+</section>
+<div id="mask2-sfs" class="unique-connection"></div>
+<!-- 组模板显示 -->
+<div id="template-group">
+    <dl class="am-accordion-item">
+        <dt class="group-show-title am-accordion-title">
+            <span>0.模板</span>
+            <label class="choose-sfs am-radio">
+                <input type="radio" name="group" value="" data-group-template-id="" data-am-ucheck checked>
+            </label>
+        </dt>
+        <dd class="am-accordion-bd am-collapse ">
+            <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+            <div class="am-accordion-content">
+            </div>
+        </dd>
+    </dl>
+</div>
+
+<!-- Begin 评价标准 template-->
+<div id="template-check">
+    <div class="content-group">
+        <div class="aCheck my-input-field am-input-group">
+            <span class="am-input-group-label" value="0">A</span>
+            <input type="text" class="am-form-field">
+        </div>
+        <button type="button" class="check-add add-button my-text-white am-btn am-btn-secondary">+</button>
+    </div>
+</div>
+<!-- End 评价标准 template-->
+<!--Begin 评价项的模板-->
+<div id="template-evaluation">
+    <div class="clear field-top">
+        <!-- Begin 评价字段-->
+        <div class="field-group">
+            <span class="number-left">1.</span>
+            <input type="text" class="field" minlength="1" value="" placeholder="请输入内容" required/>
+            <select class="type clear">
+                <option value="0" selected>打分</option>
+                <option value="1">单选</option>
+                <option value="2">多选</option>
+                <option value="3">文字</option>
+            </select>
+            <button type="button" class="field-add add-button my-text-white am-btn am-btn-secondary">+</button>
+        </div>
+        <hr data-am-widget="divider" style="" class="am-divider am-divider-dashed"/>
+
+    </div>
+</div>
+<!--End 评价项的模板-->
+
+<!-- Begin success提示框 -->
+<div id="my-alert-success" class="am-modal am-modal-alert" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">成功</div>
+        <div class="am-modal-bd">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<!-- End success提示框-->
+<!-- Begin err提示框 -->
+<div id="my-alert-false" class="am-modal am-modal-alert" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">抱歉</div>
+        <div class="am-modal-bd">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<!-- End err提示框-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/js.cookie.js"></script>
+<script src="assets/js/teacherAddEvalution.js"></script>
+</body>
+</html>

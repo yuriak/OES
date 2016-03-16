@@ -1,0 +1,278 @@
+﻿<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<META HTTP-EQUIV="expires" CONTENT="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="学生 进行评价">
+    <meta name="keywords" content="评价字段列表">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>评价页面</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/message.css">
+</head>
+<body>
+<!-- Begin "返回"公共头部 -->
+<header data-am-widget="header" class="my-header my-text-center am-header am-header-default">
+    <div class="am-header-left am-header-nav" style="left: 0;">
+        <a id="back" class="header-back">
+            <img class="am-header-icon-custom"
+                 src="data:image/svg+xml;charset=utf-8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 12 20&quot;&gt;&lt;path d=&quot;M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z&quot; fill=&quot;%23fff&quot;/&gt;&lt;/svg&gt;"
+                 alt=""/>
+        </a>
+    </div>
+    <span id="" class="my-text-white my-center">学生评价页面</span>
+    <!-- 按钮触发器， 需要指定 target -->
+    <a href="#personalCenter" class="my-personal-icon my-white am-icon-btn am-icon-user"
+       data-am-offcanvas="{target: '#personalCenter',effect: 'push'}">
+    </a>
+    <!-- Begin个人中心 -->
+    <div id="personalCenter" class="am-offcanvas">
+        <div class="my-offcanvas am-offcanvas-bar am-offcanvas-bar-flip">
+            <div class="am-offcanvas-content">
+                <div class="my-person-text">个人中心</div>
+                <span class="my-photo am-icon-optin-monster am-icon-lg"></span>
+
+                <div id="realName" class="realName">李红</div>
+                <div class="am-btn-group-stacked">
+                                        <button id="right-to-home" type="button" class="my-person-menu-top my-person-menu am-btn am-btn-default am-icon-home"><span>首页</span>
+                    </button>
+                    <button type="button"
+                            class="my-person-menu-top my-person-menu am-btn am-btn-default am-icon-comments-o">
+                        <span>消息</span></button>
+                    <button type="button" class="my-person-menu am-btn am-btn-default am-icon-cog"><span>个人设置</span>
+                    </button>
+                    <button id="my-set-pwd" type="button" class="my-person-menu am-btn am-btn-default am-icon-lock"><span>更改密码</span>
+                    </button>
+                    <button type="button" class="my-exit my-person-menu am-btn am-btn-default">退出登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End个人中心 -->
+</header>
+<!-- End "返回"公共头部 -->
+
+<button type="button" class="student-select my-center my-blue am-btn am-icon-caret-down">请选择评价对象</button>
+<div class="result-all"></div>
+<div class="field-panel am-panel am-panel-default">
+    <div class="am-panel-bd">
+        <div class="field-content-all">
+            <!-- 所有内容将显示在此处-->
+
+        </div>
+        <div class="two-button">
+            <button type="button" class="student-field-submit my-center am-btn am-btn-secondary" student-id="">提交
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!--  Begin 评价模板区域-->
+<div id="template-value">
+    <div class="my-field-group" resulttypeid="1" evaluation-field-id="">
+        <h6 class="field-title">1.标题（打分）</h6>
+        <div class="mark-bar">
+            <span class="min">0</span>
+            <span class="max">100</span>
+            <code class="mark-grade" value="" data-grade="">0</code>
+            <a type="button" class="slider"></a>
+
+            <div class="mark-bar-line"></div>
+            <div class="mark-bar-progress"></div>
+        </div>
+        <hr class="my-field-hr"/>
+    </div>
+</div>
+<!--  Begin 评价模板区域-->
+<div id="template-single-option">
+    <div class="my-field-group" resulttypeid="2" evaluation-field-id="">
+        <h6 class="field-title">标题（单选）</h6>
+
+        <div class="radio-all">
+
+        </div>
+        <hr class="my-field-hr"/>
+    </div>
+</div>
+<!--  Begin 评价模板区域-->
+<div id="template-multiple-option">
+    <div class="my-field-group" resulttypeid="3" evaluation-field-id="">
+        <h6 class="field-title">标题（多选）</h6>
+
+        <div class="checkbox-all">
+
+        </div>
+        <hr class="my-field-hr"/>
+    </div>
+</div>
+<!--  Begin 评价模板区域-->
+<div id="template-text">
+    <div class="my-field-group" resulttypeid="4" evaluation-field-id="">
+        <h6 class="field-title">标题</h6>
+            <textarea id="evaluation-content" class="my-height" maxlength="100" rows="5" required
+                      placeholder="评价内容100字以内"></textarea>
+    </div>
+</div>
+
+
+<!--  Begin 评价结果模板区域-->
+<div id="template-result-value">
+    <div data-am-widget="list_news" class="am-list-news am-list-news-default">
+        <div class="am-list-news-hd am-cf">
+            <!--列表标题-->
+            <span style="font-size: large">内容准备的充分程度如何？</span>
+        </div>
+        <div class="am-list-news-bd">
+            <ul class="grade-ul am-list">
+                <li class='max-value am-g'>
+                    <span>最高分：<i>95</i></span>
+                </li>
+                <li class='min-value am-g'>
+                    <span>最低分：<i>95</i></span>
+                </li>
+                <li class='average-value am-g'>
+                    <span>平均分：<i>95</i></span>
+                </li>
+                <li class='total-number am-g'>
+                    <span>评价人数：<i>95</i>人</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--  Begin 评价结果模板区域-->
+
+<!--  Begin 评价结果模板区域-->
+<!--单选-->
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="template-result-single">
+    <div data-am-widget="list_news" class="am-list-news am-list-news-default">
+        <span style="font-size: large">1.内容</span>(单选)
+
+        <div class="single-histogram" single-id=""></div>
+        <div class="single-pie" single-id=""></div>
+    </div>
+</div>
+<!--  Begin 评价结果模板区域-->
+
+
+<!--多选-->
+<div id="template-result-multiple">
+    <div data-am-widget="list_news" class="am-list-news am-list-news-default">
+        <span style="font-size: large">内容准备的充分程度如何？</span>(多选)
+        <div class="multiple-histogram" multiple-id=""></div>
+    </div>
+</div>
+<!--文本框-->
+<div id="template-result-text">
+    <div class="am-list-news-default">
+        <a class="field-sfs">
+            <span class="title-sfs">标题</span>
+            <span class="more-sfs am-fr">更多 &raquo;</span>
+        </a>
+        <div class="text-top">
+        </div>
+        <div class="more" style="display: none">
+
+        </div>
+
+    </div>
+</div>
+
+<!--End 评价结果展示面板-->
+
+
+<!-- Begin 学生列表的 Dialog-->
+<div class="my-student-dialog">
+    <div id="mask"></div>
+    <ul class="am-list am-list-static am-list-border">
+
+    </ul>
+</div>
+<!-- End 学生列表的 Dialog-->
+
+
+<!--End 评价内容 -->
+
+
+<!--public 提示框-->
+<!-- Begin success提示框 -->
+<div id="my-alert-success" class="am-modal am-modal-alert" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">成功</div>
+        <div class="am-modal-bd">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<!-- End success提示框-->
+<!-- Begin err提示框 -->
+<div id="my-alert-false" class="am-modal am-modal-alert" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">抱歉</div>
+        <div class="am-modal-bd">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<!-- End err提示框-->
+<!-- Begin 加载-->
+<div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="my-loading">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">努力加载中...</div>
+        <div class="am-modal-bd">
+            <span class="am-icon-spinner am-icon-spin"></span>
+        </div>
+    </div>
+</div>
+<!-- End 加载-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<script src="assets/js/js.cookie.js"></script>
+<script src="assets/js/configure.js"></script>
+<script src="assets/js/studentEvaluate.js"></script>
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/slider.js"></script>
+<script src="assets/js/echarts.common.min.js"></script>
+</body>
+</html>

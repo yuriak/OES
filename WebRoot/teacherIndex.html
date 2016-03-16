@@ -1,0 +1,233 @@
+﻿<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<META HTTP-EQUIV="expires" CONTENT="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="教师主页，教师开设的所有课程">
+    <meta name="keywords" content="教师 课程 开设">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>主页</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+<body>
+<!-- Begin "返回"公共头部 -->
+<header data-am-widget="header" class="my-header my-text-center am-header am-header-default">
+    <span id="" class="my-text-white my-center">课程列表</span>
+    <!-- 按钮触发器， 需要指定 target -->
+    <a href="#personalCenter" class="my-personal-icon my-white am-icon-btn am-icon-user"
+       data-am-offcanvas="{target: '#personalCenter',effect: 'push'}">
+    </a>
+    <!-- Begin个人中心 -->
+    <div id="personalCenter" class="am-offcanvas">
+        <div class="my-offcanvas am-offcanvas-bar am-offcanvas-bar-flip">
+            <div class="am-offcanvas-content">
+                <div class="my-person-text">个人中心</div>
+                <span class="my-photo am-icon-optin-monster am-icon-lg"></span>
+
+                <div id="realName" class="realName"></div>
+                <div class="am-btn-group-stacked">
+                                      <button id="right-to-home" type="button" class="my-person-menu-top my-person-menu am-btn am-btn-default am-icon-home"><span>首页</span>
+                    </button>
+                    <button type="button"
+                            class="my-person-menu-top my-person-menu am-btn am-btn-default am-icon-comments-o">
+                        <span>消息</span></button>
+                    <button type="button" class="my-person-menu am-btn am-btn-default am-icon-cog"><span>个人设置</span>
+                    </button>
+                    <button id="my-set-pwd" type="button" class="my-person-menu am-btn am-btn-default am-icon-lock"><span>更改密码</span>
+                    </button>
+                    <button type="button" class="my-exit my-person-menu am-btn am-btn-default">退出登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End个人中心 -->
+</header>
+<!-- End "返回"公共头部 -->
+
+
+
+<!-- Begin 学期选择-->
+<select id="semester" class="semester">
+
+</select>
+<!-- End 学期选择-->
+
+
+
+<!-- Begin 课程-->
+<section data-am-widget="accordion" class="am-accordion am-accordion-gapped" data-am-accordion='{  }'>
+    <dl class="my-teacher-course am-accordion-item am-active">
+        </dl>
+</section>
+<!-- End 课程-->
+
+
+<div id="template-course" hidden>
+    <dl class="my-teacher-course am-accordion-item am-active">
+        <button type="button" class="enter my-accordion-button" value=""></button>
+        <dt class="my-accordion-title am-accordion-title" value="1"></dt>
+        <dd class="am-accordion-bd am-collapse">
+            <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+            <div class="am-accordion-content">
+                <div>
+                    <h6 class="my-course-h6-first">总申请人数:</h6><span class="my-apply-number"></span>
+                    <span class="course-right"><h6 class="my-course-h6-last">待批准人数:</h6><span class="my-approving-number"></span></span>
+                </div>
+                <div class="am-g am-g-collapse ">
+                    <div class="am-u-sm-5 ">
+                        <button type="button" class=" my-approve my-center  my-warning my-text-white am-btn" >批准学生</button>
+                    </div>
+                    <div class="am-u-sm-5 ">
+                        <button type="button" class=" my-mark my-center  my-success my-text-white am-btn" >登分/查分
+                        </button>
+                    </div>
+                    <div class="am-u-sm-2 ">
+                        <button value="" type="button" class=" delete-course my-center my-danger teacher-deleteCourse-button am-btn am-icon-trash-o" ></button>
+                    </div>
+                </div>
+            </div>
+        </dd>
+    </dl>
+</div>
+
+
+
+<!-- Begin 添加按钮-->
+<button type="button" class="my-add-button am-btn am-btn-secondary am-icon-plus" id="doc-prompt-toggle"></button>
+<!-- End 添加按钮-->
+
+<div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">=-填写课程信息-=</div>
+        <div class="am-modal-bd">
+            <form action="" class="am-form" data-am-validator>
+                <fieldset>
+                    <div class="am-form-group">
+                        <!--<label for="doc-vld-age-2">课序号：</label>-->
+                        <input type="number" class="" id="my-courseOrder" placeholder="请输入课序号" minlength="3" required/>
+                    </div>
+
+                    <div class="am-form-group">
+                        <!--<label for="doc-vld-age-2">课程号：</label>-->
+                        <input type="number" class="" id="my-courseNumber" placeholder="请输入课程号" minlength="3" required/>
+                    </div>
+                    <div class="am-form-group">
+                        <!--<label for="doc-vld-name-2">课程名：</label>-->
+                        <input type="text" id="my-courseName" minlength="1" placeholder="请输入课程名" required/>
+                    </div>
+
+                    <div class="am-form-group">
+                        <!--<label for="doc-select-1">学院：</label>-->
+                        <select id="doc-select-1" class="my-college" required>
+                            <option value="">-=请学院-</option>
+                        </select>
+                        <span class="am-form-caret"></span>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn " data-am-modal-confirm>提交</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Begin 删除提示Dialog-->
+<div class="my-delete-dialog am-modal am-modal-confirm" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">注意：</div>
+        <div class="am-modal-bd">
+            你，确定要删除吗？
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+        </div>
+    </div>
+</div>
+<!-- End 提示Dialog-->
+
+
+
+
+<!-- Begin 加载-->
+<div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="my-loading">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">努力加载中...</div>
+        <div class="am-modal-bd">
+            <span class="am-icon-spinner am-icon-spin"></span>
+        </div>
+    </div>
+</div>
+<!-- End 加载-->
+
+<!-- Begin success提示框 -->
+<div id="my-alert-success" class="am-modal am-modal-alert" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">成功</div>
+        <div class="am-modal-bd">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<!-- End success提示框-->
+<!-- Begin err提示框 -->
+<div id="my-alert-false" class="am-modal am-modal-alert" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">抱歉</div>
+        <div class="am-modal-bd">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<!-- End err提示框-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/js.cookie.js"></script>
+<script src="assets/js/teacherIndex.js"></script>
+
+</body>
+</html>

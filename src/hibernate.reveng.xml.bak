@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="administrator" catalog="oes">
+		<primary-key>
+			<key-column name="ADMINID" property="adminID" />
+		</primary-key>
+		<column name="PASSWORD" property="password"></column>
+		<column name="USERNAME" property="userName"></column>
+	</table>
+	<table name="college" catalog="oes">
+		<primary-key>
+			<key-column name="COLLEGEID" property="collegeID" />
+		</primary-key>
+		<column name="COLLEGENAME" property="collegeName"></column>
+	</table>
+	<table name="course_elective" catalog="oes"
+		class="edu.dufe.oes.bean.courseElective">
+		<primary-key>
+			<generator class="native"></generator>
+			<key-column name="ELECTIVEID" property="electiveID" />
+		</primary-key>
+		<column name="COURSEID" property="courseID"></column>
+		<column name="STUDENTID" property="studentID"></column>
+		<column name="ELECTIVETIME" property="electiveTime"></column>
+		<column name="ELECTIVESTATUS" property="electiveStatus"></column>
+		<column name="COURSEGRADE" property="courseGrade"></column>
+		<column name="COURSEGRADESTATUS" property="courseGradeStatus"></column>
+	</table>
+	<table name="course" catalog="oes">
+		<primary-key>
+			<key-column name="COURSEID" property="courseID" />
+		</primary-key>
+		<column name="COURSENUMBER" property="courseNumber"></column>
+		<column name="COURSEORDER" property="courseOrder"></column>
+		<column name="SEMESTERID" property="semesterID"></column>
+		<column name="CREATEDATE" property="createDate"></column>
+		<column name="COURSENAME" property="courseName"></column>
+		<column name="TEACHERID" property="teacherID"></column>
+		<column name="COLLEGEID" property="collegeID"></column>
+	</table>
+	<table name="evaluation_field" catalog="oes">
+		<primary-key>
+			<key-column name="EVALUATIONFIELDID"
+				property="evaluationFieldID" />
+		</primary-key>
+		<column name="EVALUATIONID" property="evaluationID"></column>
+		<column name="RESULTTYPEID" property="resultTypeID"></column>
+		<column name="FIELDCONTENT" property="fieldContent"></column>
+	</table>
+	<table name="evaluation_receiver" catalog="oes">
+		<primary-key>
+			<key-column name="E_RECEIVERID"
+				property="evaluationReceiverID" />
+		</primary-key>
+		<column name="EVALUATIONID" property="evaluationID"></column>
+		<column name="STUDENTID" property="studentID"></column>
+		<column name="EVALUATIONGRADE" property="evaluationGrade"></column>
+	</table>
+	<table name="evaluation_result" catalog="oes">
+		<primary-key>
+			<key-column name="EVALUATIONRESULTID"
+				property="evaluationResultID" />
+		</primary-key>
+		<column name="EVALUATORID" property="evaluatorID"></column>
+		<column name="E_RECEIVERID" property="evaluationReceiverID"></column>
+		<column name="RECEIVERTYPE" property="receiverType"></column>
+		<column name="EVALUATIONFIELDID" property="evaluationFieldID"></column>
+	</table>
+	<table name="evaluation_template" catalog="oes">
+		<primary-key>
+			<key-column name="EVALUATIONTEMPLATEID"
+				property="evaluationTemplateID" />
+		</primary-key>
+		<column name="EVALUATIONID" property="evaluationID"></column>
+		<column name="COURSEID" property="courseID"></column>
+		<column name="EVALUATIONTEMPLATENAME"
+			property="evaluationTemplateName">
+		</column>
+		<column name="BACKUPTIME" property="backupTime"></column>
+	</table>
+	<table name="evaluation" catalog="oes">
+		<primary-key>
+			<key-column name="EVALUATIONID" property="evaluationID" />
+		</primary-key>
+		<column name="LESSONID" property="lessonID"></column>
+		<column name="EVALUATIONTIME" property="evaluationTime"></column>
+		<column name="EVALUATIONTITLE" property="evaluationTitle"></column>
+		<column name="EVALUATIONSTATUS" property="evaluationStatus"></column>
+		<column name="ISGROUPEVALUATION" property="isGroupEvaluation"></column>
+	</table>
+	<table name="group_member" catalog="oes">
+		<primary-key>
+			<key-column name="GROUPMEMBERID" property="groupMemberID" />
+		</primary-key>
+		<column name="GROUPID" property="groupID"></column>
+		<column name="STUDENTID" property="studentID"></column>
+		<column name="ADDTIME" property="addTime"></column>
+	</table>
+	<table name="group_table" catalog="oes"
+		class="edu.dufe.oes.bean.Group">
+		<primary-key>
+			<generator class="native"></generator>
+			<key-column name="GROUPID" property="groupID" />
+		</primary-key>
+		<column name="EVALUTIONID" property="evaluationID"></column>
+		<column name="GROUPNUMBER" property="groupNumber"></column>
+	</table>
+	<table name="group_template" catalog="oes">
+		<primary-key>
+			<key-column name="GROUPTEMPLATEID"
+				property="groupTemplateID" />
+		</primary-key>
+		<column name="GROUPID" property="groupID"></column>
+		<column name="GROUPTEMPLATENAME" property="groupTemplateName"></column>
+		<column name="GROUPBACKUPID" property="groupBackupID"></column>
+		<column name="COURSEID" property="courseID"></column>
+		<column name="BACKUPTIME" property="backupTime"></column>
+	</table>
+	<table name="leave_table" catalog="oes"
+		class="edu.dufe.oes.bean.Leave">
+		<primary-key>
+			<generator class="native"></generator>
+			<key-column name="LEAVEID" property="leaveID" />
+		</primary-key>
+		<column name="LESSONID" property="lessonID"></column>
+		<column name="STUDENTID" property="studentID"></column>
+		<column name="LEAVETIME" property="leaveTime"></column>
+		<column name="LEAVEREASON" property="leaveReason"></column>
+		<column name="APPROVESTATUS" property="ApproveStatus"></column>
+	</table>
+	<table name="lesson" catalog="oes">
+		<primary-key>
+			<key-column name="LESSONID" property="lessonID" />
+		</primary-key>
+		<column name="COURSEID" property="courseID"></column>
+		<column name="ADDTIME" property="addTime"></column>
+		<column name="LESSONSTATUS" property="lessonStatus"></column>
+	</table>
+	<table name="message" catalog="oes">
+		<primary-key>
+			<key-column name="MESSAGEID" property="messageID" />
+		</primary-key>
+		<column name="SENDERID" property="senderID"></column>
+		<column name="RECEIVERID" property="receiverID"></column>
+		<column name="SENTTIME" property="sentTime"></column>
+		<column name="OPENTIME" property="openTime"></column>
+		<column name="OPENSTATUS" property="openStatus"></column>
+		<column name="SENDERDELETESTATUS"
+			property="senderDeleteStatus">
+		</column>
+		<column name="RECEIVERDELETESTATUS"
+			property="receiverDeleteStatus">
+		</column>
+	</table>
+	<table name="multiple_option_result" catalog="oes">
+		<primary-key>
+			<key-column name="MULTIPLEOPTIONRESULTID"
+				property="multipleOptionResultID" />
+		</primary-key>
+		<column name="OPTIONVALUE" property="optionValue"></column>
+		<column name="EVALUATIONRESULTID"
+			property="evaluationResultID">
+		</column>
+	</table>
+	<table name="notice" catalog="oes">
+		<primary-key>
+			<key-column name="NOTICEID" property="noticeID" />
+		</primary-key>
+		<column name="LESSONID" property="lessonID"></column>
+		<column name="CONTENT"></column>
+		<column name="EMERGENCYLEVEL" property="emergencyLevel"></column>
+	</table>
+	<table name="option_title" catalog="oes">
+		<primary-key>
+			<key-column name="OPTIONTITLEID" property="optionTitleID" />
+		</primary-key>
+		<column name="EVALUATIONFIELDID" property="evaluationFieldID"></column>
+		<column name="OPTIONKEY" property="optionKey"></column>
+		<column name="OPTIONTITLECONTENT"
+			property="optionTitleContent">
+		</column>
+	</table>
+	<table name="result_type" catalog="oes">
+		<primary-key>
+			<key-column name="RESULTTYPEID" property="resultTypeID" />
+		</primary-key>
+		<column name="TYPENAME" property="resultTypeName"></column>
+	</table>
+	<table name="semester" catalog="oes">
+		<primary-key>
+			<key-column name="SEMESTERID" property="semesterID" />
+		</primary-key>
+		<column name="SEMESTERNAME" property="semesterName"></column>
+	</table>
+	<table name="single_option_result" catalog="oes">
+		<primary-key>
+			<key-column name="SINGLEOPTIONRESULTID"
+				property="singleOptionResultID" />
+		</primary-key>
+		<column name="EVALUATIONRESULTID"
+			property="evaluationResultID">
+		</column>
+		<column name="OPTIONVALUE" property="optionValue"></column>
+	</table>
+	<table name="student" catalog="oes">
+		<column name="USERID" property="userID"></column>
+	</table>
+	<table name="sys_config" catalog="oes">
+		<primary-key>
+			<key-column name="CONFIGID" property="configID" />
+		</primary-key>
+		<column name="CONFIGKEY" property="configKey"></column>
+		<column name="CONFIGVALUE" property="configValue"></column>
+	</table>
+	<table name="teacher" catalog="oes">
+		<primary-key>
+			<key-column name="TEACHERID" property="teacherID" />
+		</primary-key>
+		<column name="USERID" property="userID"></column>
+		<column name="APPROVESTATUS" property="approveStatus"></column>
+	</table>
+	<table name="text_result" catalog="oes">
+		<primary-key>
+			<key-column name="TEXTRESULTID" property="textResultID" />
+		</primary-key>
+		<column name="RESULTTEXT" property="resultText"></column>
+		<column name="EVALUATIONTRESULTID"
+			property="evaluationResultID">
+		</column>
+	</table>
+	<table name="user" catalog="oes">
+		<column name="COLLEGEID" property="collegeID"></column>
+		<column name="PLAINPASSWORD" property="plainPassword"></column>
+		<column name="ENCRYTPASSWORD" property="encryptPassword"></column>
+		<column name="PASSWORDQUESTION" property="passwordQuestion"></column>
+		<column name="PASSWORDANSWER" property="passwordAnswer"></column>
+		<column name="REGISTERTIME" property="registerTime"></column>
+		<column name="LASTLOGINTIME" property="lastLoginTime"></column>
+		<column name="MESSAGENUMBER" property="messageNumber"></column>
+		<column name="REALNAME" property="realName"></column>
+	</table>
+	<table name="value_result" catalog="oes">
+		<primary-key>
+			<key-column name="VALUERESULTID" property="valueResultID" />
+		</primary-key>
+		<column name="RESULTVALUE" property="resultValue"></column>
+		<column name="EVALUATIONRESULTID" property="evaluationResultID"></column>
+	</table>
+</hibernate-reverse-engineering>

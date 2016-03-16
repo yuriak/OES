@@ -1,0 +1,172 @@
+﻿<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+        <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<META HTTP-EQUIV="expires" CONTENT="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="教师评分">
+    <meta name="keywords" content="教师 评分">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>评分</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<!-- Begin "返回"公共头部 -->
+<header data-am-widget="header" class="my-header my-text-center am-header am-header-default">
+    <div class="am-header-left am-header-nav" style="left: 0;">
+        <a id="back" class="header-back" href="javascript:window.history.go(-1);">
+            <img class="am-header-icon-custom"
+                 src="data:image/svg+xml;charset=utf-8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 12 20&quot;&gt;&lt;path d=&quot;M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z&quot; fill=&quot;%23fff&quot;/&gt;&lt;/svg&gt;"
+                 alt=""/>
+        </a>
+        <span id="register-text">登分/查分</span>
+    </div>
+    <!-- 按钮触发器， 需要指定 target -->
+    <a href="#personalCenter" class="my-personal-icon my-white am-icon-btn am-icon-user"
+       data-am-offcanvas="{target: '#personalCenter',effect: 'push'}">
+    </a>
+    <!-- Begin个人中心 -->
+    <div id="personalCenter" class="am-offcanvas">
+        <div class="my-offcanvas am-offcanvas-bar am-offcanvas-bar-flip">
+            <div class="am-offcanvas-content">
+                <div class="my-person-text">个人中心</div>
+                <span class="my-photo am-icon-optin-monster am-icon-lg"></span>
+
+                <div id="realName" class="realName">李红</div>
+                <div class="am-btn-group-stacked">
+                                        <button id="right-to-home" type="button" class="my-person-menu-top my-person-menu am-btn am-btn-default am-icon-home"><span>首页</span>
+                    </button>
+                    <button type="button"
+                            class="my-person-menu-top my-person-menu am-btn am-btn-default am-icon-comments-o">
+                        <span>消息</span></button>
+                    <button type="button" class="my-person-menu am-btn am-btn-default am-icon-cog"><span>个人设置</span>
+                    </button>
+                    <button id="my-set-pwd" type="button" class="my-person-menu am-btn am-btn-default am-icon-lock"><span>更改密码</span>
+                    </button>
+                    <button type="button" class="my-exit my-person-menu am-btn am-btn-default">退出登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End个人中心 -->
+</header>
+<!-- End "返回"公共头部 -->
+
+<button type="button" class="student-select my-center my-blue am-btn am-icon-caret-down"></button>
+
+<div class="my-panel-margin am-panel am-panel-default">
+    <div class="am-panel-bd">
+        <p>姓名：<span class="my-studentName" ></span></p>
+
+        <p>学号：<span class="my-userName" ></span></p>
+
+        <p>学院：<span class="my-collegeName"></span></p>
+
+        <p>请假次数：<code id="leaveNumber"></code>次</p>
+
+        <p>总共参加了<code id="totalEvaluationNumber"></code>次评价</p>
+
+        <p>我参加的次数<code id="myEvaluationNumber"></code>次</p>
+
+        <p>平均参与比例<code id="averageJoiningPercentage"></code></p>
+
+        <p>最后所得平均分为<code id="averageEvaluationGrade"></code>分</p>
+        <hr/>
+        <div class="my-green">
+            <p class="my-center am-text-lg am-text-center">教师评分：</p>
+
+            <form action="" class="am-form" data-am-validator>
+                <fieldset>
+                    <div class="am-form-group">
+                        <label for="doc-vld-name-2">期末成绩：</label>
+                        <input id="courseGrade" type="number" id="doc-vld-name-2" minlength="1" placeholder="你给学生打多少分？" required/>
+                    </div>
+                    <button value="" id="my-submit" class="my-center am-btn am-btn-secondary" type="button">确认</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Begin 学生列表的 Dialog-->
+<div class="my-student-dialog">
+    <div id="mask"></div>
+    <ul id="my-ul" class="am-list am-list-static am-list-border">
+
+    </ul>
+</div>
+<!-- End 学生列表的 Dialog-->
+
+<div class="template-student" hidden>
+    <li  class="my-li" value="">
+        <span class="student-name"></span>
+    </li>
+</div>
+
+
+
+
+<!-- Begin success提示框 -->
+<div id="my-alert-success" class="am-modal am-modal-alert" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">成功</div>
+        <div class="am-modal-bd">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<!-- End success提示框-->
+<!-- Begin err提示框 -->
+<div id="my-alert-false" class="am-modal am-modal-alert" tabindex="-1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">抱歉</div>
+        <div class="am-modal-bd">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<!-- End err提示框-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/js.cookie.js"></script>
+<script src="assets/js/teacherMarkGrade.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+.font{
+    display: block;
+    font-size: 1em;
+}
+.my-rapid{
+    font-size: 1em;
+    right:0px;
+    top: 7px;
+}
+.am-list>li>a.my-group-student{
+	    padding-top: 11px;
+    padding-bottom: 11px;
+}
+.am-list-static.am-list-border>li.aaasfs{
+	padding:0;
+}
+.receiver{
+    position: absolute;
+    left:20px;
+    top:5px;
+}
+.my-status{
+    position: absolute;
+    right:6px;
+    top:11px;
+}
+.am-form-icon  .my-receiver-input{
+    padding-left: 80px!important;
+}
+.my-msg-center {
+    display: block;
+    padding: 6px 13px;
+    margin-right: 0;
+}
+.my-btn-center {
+    display: block;
+    margin-left: 33px;
+    border-radius: 8%;
+}
+.my-button{
+    display: block;
+    position: absolute;
+    border-radius: 8%;
+    left:2px;
+    top:5px;
+}
+.my-height{
+    height: 80px;
+    width: 100%;
+}
+.my-btn-center2 {
+    display: block;
+    padding: 8px 35px 8px 35px;
+
+}
+
+.am-btn-group-stacked>.my-search.am-btn{
+    border: none;
+    margin-top: 50px;
+    text-align: center;
+    background-color: rgba(159, 255, 56, 0.5);
+}
+
+.my-add-button{
+    display: block;
+    margin: 5px auto 0 auto;
+    padding: 5px 10px;
+    border-radius: 8%;
+    color: white;
+    height: 30px;
+}
+.my-add-button:before{
+    font-size: 100%;
+    line-height: 1em;
+}
+
+.my-select{
+    display: block;
+    margin:10px auto 10px auto;
+}
+.my-add-group{
+    display: block;
+    margin: 50px auto;
+}
+
+.my-add-btn-app{
+    display: block;
+    width:5rem;
+    height:5rem;
+    padding: 1px;
+    border-radius: 50%;
+    margin: 30px auto 0;
+    border:0;
+}
+
+.my-add-btn-app:active:focus,.my-add-button:focus{
+    outline: none;
+}
+.my-add-btn-app:before{
+    font-size: 5rem;
+    line-height: 5.2rem;
+}
+
+label.approve-teacher + .am-checkbox {
+    margin-top: 10px;
+}
+.my-slide{
+    width:100%;
+    height:25px;
+    border:1px
+    margin-left: 15px;
+}
+.my-text{
+    width: 70%;
+    height: 25px;
+    margin-left: 15px;
+}
+.my-status-new{
+    position: absolute;
+    right:10%;
+    top:7px;
+}
+.my-histogram{
+    width: 90%;
+    margin-left: 0px;
+    height:300px;
+}
+.tea-sty{
+    margin: 1rem 1rem 3rem 1rem;
+background-color: rgb(237, 237, 237);
+}

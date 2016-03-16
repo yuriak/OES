@@ -1,0 +1,169 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<META HTTP-EQUIV="expires" CONTENT="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="站内信">
+    <meta name="keywords" content="评价 站内信">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>站内信</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <style>
+        #vld-tooltip {
+            position: absolute;
+            z-index: 1000;
+            padding: 5px 10px;
+            background: #F37B1D;
+            min-width: 150px;
+            color: #fff;
+            transition: all 0.15s;
+            box-shadow: 0 0 5px rgba(0,0,0,.15);
+            display: none;
+        }
+
+        #vld-tooltip:before {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            margin-left: -8px;
+            content: "";
+            border-width: 0 8px 8px;
+            border-color: transparent transparent #F37B1D;
+            border-style: none inset solid;
+        }
+    </style>
+</head>
+<body>
+<!-- Begin "返回"公共头部 -->
+<header data-am-widget="header" class="my-header am-header am-header-default">
+    <div class="am-header-left am-header-nav" style="left: 0;">
+        <a id="back" class="header-back">
+            <img class="am-header-icon-custom"
+                 src="data:image/svg+xml;charset=utf-8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 12 20&quot;&gt;&lt;path d=&quot;M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z&quot; fill=&quot;%23fff&quot;/&gt;&lt;/svg&gt;"
+                 alt=""/>
+        </a>
+        <span id="message-text">收信箱</span>
+		
+    </div>
+    <i id="to-home" class="am-icon-home "  style="float:right;display:block;color:#fff; font-size:2.5rem;"></i>
+</header>
+<!-- End "返回"公共头部 -->
+
+<!-- begin 收信箱列表-->
+<section data-am-widget="accordion" class="am-accordion am-accordion-gapped" data-am-accordion='{  }'>
+
+</section>
+<!-- End 收信箱列表 -->
+
+
+
+
+<!--收信箱信息的模板-->
+<div class="template-message" hidden>
+    <dl class="my-teacher-course am-accordion-item am-active">
+        <dt class="my-accordion-title am-accordion-title" value="1">
+            <input type="hidden" value="0" class="my-input">
+            <span class="my-title"></span>
+        </dt>
+        <dd class="am-accordion-bd am-collapse ">
+            <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+            <div class="am-accordion-content">
+                <ul class="am-list am-list-static am-list-border am-list-striped">
+                    <li class="time"><i class="am-icon-clock-o am-icon-fw" style="color: #44b549"></i></li>
+                    <li class="receiver"><i class="am-icon-github am-icon-fw" style="color: #44b549"></i></li>
+                    <li class="content"><i class="am-icon-book am-icon-fw" style="color: #44b549"></i></li>
+                </ul>
+                <div class="am-g am-g-collapse ">
+                    <div class="am-u-sm-6 ">
+                        <button type="button" class=" my-reply-btn my-center am-btn am-btn-secondary  " value="" >回复</button>
+                    </div>
+                    <div class="am-u-sm-6 ">
+                        <button type="button" class="my-delete-btn my-center am-btn am-btn-secondary  am-icon-trash-o " style="background-color: #ea1328">删除</button>
+                    </div>
+                </div>
+            </div>
+        </dd>
+    </dl>
+</div>
+
+
+
+
+
+<!--begin 底部菜单-->
+<div class="am-navbar am-cf am-navbar-default " id="my-foot">
+    <ul class="my-foot am-navbar-nav am-cf am-avg-sm-4">
+        <li >
+            <a href="#" class="">
+                <input type="hidden" value="0">
+                <span class="am-icon-envelope" style="color: green"></span>
+                <span class="am-navbar-label" style="color: green">收信箱</span>
+            </a>
+        </li>
+        <li>
+            <a href="createMessage.html" class="">
+                <input type="hidden" value="0">
+                <span class="am-icon-plus"></span>
+                <span class="am-navbar-label">新建</span>
+            </a>
+        </li>
+        <li data-am-navbar-qrcode>
+            <a href="sentMessage.html" class="">
+                <input type="hidden" value="0">
+                <span class="am-icon-folder-open"></span>
+                <span class="am-navbar-label">已发送</span>
+            </a>
+        </li>
+
+    </ul>
+</div>
+<!-- End 底部菜单-->
+
+
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/js.cookie.js"></script>
+<script src="assets/js/receiveMessage.js"></script>
+</body>
+</html>
